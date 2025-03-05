@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akatsuki - Profil Tim</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="fade-in">
+    <!-- Header -->
+    <header>
+        <nav>
+            <h1>Akatsuki</h1>
+            <ul>
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Konten Utama (Slideable) -->
+    <div class="main-content">
+        <!-- Halaman Profil Anggota -->
+        <section id="team-page" class="content-page active">
+            <section class="team-description">
+                <h2>Welcome to Akatsuki</h2>
+                <p>Akatsuki adalah grup kriminal kuat yang berusaha mencapai perdamaian abadi dengan cara mereka sendiri.</p>
+            </section>
+
+            <section class="team-profiles">
+                <div class="profile-slider">
+                    <!-- Kartu Profil -->
+                    <div class="profile-card" onclick="openLightbox(1)">
+                        <div class="image-container">
+                            <img src="images/pain.jpeg" alt="Nagato (Pain)" class="profile-img">
+                        </div>
+                        <h3>Nagato (Pain)</h3>
+                        <p>Pemimpin Akatsuki</p>
+                    </div>
+                    <div class="profile-card" onclick="openLightbox(2)">
+                        <div class="image-container">
+                            <img src="images/konan.jpeg" alt="Konan" class="profile-img">
+                        </div>
+                        <h3>Konan</h3>
+                        <p>Manipulasi kertas</p>
+                    </div>
+                    <div class="profile-card" onclick="openLightbox(3)">
+                        <div class="image-container">
+                            <img src="images/itachi.jpeg" alt="Itachi Uchiha" class="profile-img">
+                        </div>
+                        <h3>Itachi Uchiha</h3>
+                        <p>Ninja legendaris</p>
+                    </div>
+                    <div class="profile-card" onclick="openLightbox(4)">
+                        <div class="image-container">
+                            <img src="images/kisame.jpeg" alt="Kisame Hoshigaki" class="profile-img">
+                        </div>
+                        <h3>Kisame Hoshigaki</h3>
+                        <p>Pakar pedang</p>
+                    </div>
+                    <div class="profile-card" onclick="openLightbox(5)">
+                        <div class="image-container">
+                            <img src="images/deidara.jpeg" alt="Deidara" class="profile-img">
+                        </div>
+                        <h3>Deidara</h3>
+                        <p>Ahli ledakan</p>
+                    </div>
+                    <div class="profile-card" onclick="openLightbox(6)">
+                        <div class="image-container">
+                            <img src="images/sasori.jpeg" alt="Sasori" class="profile-img">
+                        </div>
+                        <h3>Sasori</h3>
+                        <p>Master boneka</p>
+                    </div>
+                    <div class="profile-card" onclick="openLightbox(7)">
+                        <div class="image-container">
+                            <img src="images/hidan.jpeg" alt="Hidan" class="profile-img">
+                        </div>
+                        <h3>Hidan</h3>
+                        <p>Abadi</p>
+                    </div>
+                    <div class="profile-card" onclick="openLightbox(8)">
+                        <div class="image-container">
+                            <img src="images/kakuzu.jpeg" alt="Kakuzu" class="profile-img">
+                        </div>
+                        <h3>Kakuzu</h3>
+                        <p>Pengumpul harta</p>
+                    </div>
+                    <div class="profile-card" onclick="openLightbox(9)">
+                        <div class="image-container">
+                            <img src="images/sasuke.jpeg" alt="sasuke" class="profile-img">
+                        </div>
+                        <h3>sasuke</h3>
+                        <p>eksekutor obito</p>
+                    </div>
+                    <div class="profile-card" onclick="openLightbox(10)">
+                        <div class="image-container">
+                            <img src="images/ovito.jpeg" alt="Tobi (Obito Uchiha)" class="profile-img">
+                        </div>
+                        <h3>Tobi (Obito)</h3>
+                        <p>Manipulator</p>
+                    </div>
+                    <!-- Duplikat untuk loop -->
+                    <div class="profile-card" onclick="openLightbox(1)">
+                        <div class="image-container">
+                            <img src="images/pain.jpeg" alt="Nagato (Pain)" class="profile-img">
+                        </div>
+                        <h3>Nagato (Pain)</h3>
+                        <p>Pemimpin Akatsuki</p>
+                    </div>
+                    <div class="profile-card" onclick="openLightbox(2)">
+                        <div class="image-container">
+                            <img src="images/konan.jpeg" alt="Konan" class="profile-img">
+                        </div>
+                        <h3>Konan</h3>
+                        <p>Manipulasi kertas</p>
+                    </div>
+                    <div class="profile-card" onclick="openLightbox(3)">
+                        <div class="image-container">
+                            <img src="images/itachi.jpeg" alt="Itachi Uchiha" class="profile-img">
+                        </div>
+                        <h3>Itachi Uchiha</h3>
+                        <p>Ninja legendaris</p>
+                    </div>
+                    <div class="profile-card" onclick="openLightbox(4)">
+                        <div class="image-container">
+                            <img src="images/kisame.jpeg" alt="Kisame Hoshigaki" class="profile-img">
+                        </div>
+                        <h3>Kisame Hoshigaki</h3>
+                        <p>Pakar pedang</p>
+                    </div>
+                    <div class="profile-card" onclick="openLightbox(5)">
+                        <div class="image-container">
+                            <img src="images/deidara.jpeg" alt="Deidara" class="profile-img">
+                        </div>
+                        <h3>Deidara</h3>
+                        <p>Ahli ledakan</p>
+                    </div>
+                    <div class="profile-card" onclick="openLightbox(6)">
+                        <div class="image-container">
+                            <img src="images/sasori.jpeg" alt="Sasori" class="profile-img">
+                        </div>
+                        <h3>Sasori</h3>
+                        <p>Master boneka</p>
+                    </div>
+                    <div class="profile-card" onclick="openLightbox(7)">
+                        <div class="image-container">
+                            <img src="images/hidan.jpeg" alt="Hidan" class="profile-img">
+                        </div>
+                        <h3>Hidan</h3>
+                        <p>Abadi</p>
+                    </div>
+                    <div class="profile-card" onclick="openLightbox(8)">
+                        <div class="image-container">
+                            <img src="images/kakuzu.jpeg" alt="Kakuzu" class="profile-img">
+                        </div>
+                        <h3>Kakuzu</h3>
+                        <p>Pengumpul harta</p>
+                    </div>
+                    <div class="profile-card" onclick="openLightbox(9)">
+                        <div class="image-container">
+                            <img src="images/sasuke.jpeg" alt="sasuke" class="profile-img">
+                        </div>
+                        <h3>sasuke</h3>
+                        <p>eksekutor obito</p>
+                    </div>
+                    <div class="profile-card" onclick="openLightbox(10)">
+                        <div class="image-container">
+                            <img src="images/ovito.jpeg" alt="Tobi (Obito Uchiha)" class="profile-img">
+                        </div>
+                        <h3>Tobi (Obito)</h3>
+                        <p>Manipulator</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tombol Join Sekarang -->
+            <section class="join-section">
+                <a href="join.html" class="join-btn nav-link">Join Sekarang</a>
+            </section>
+        </section>
+
+        <!-- Halaman Video -->
+        <section id="video-page" class="content-page">
+            <div class="video-container">
+                <video controls>
+                    <source src="videos/videos.mp4" type="video/mp4">
+                    Browser Anda tidak mendukung tag video.
+                </video>
+            </div>
+        </section>
+
+        <!-- Halaman Deskripsi -->
+        <section id="desc-page" class="content-page">
+            <div class="desc-container">
+                <h2>Tentang Akatsuki</h2>
+                <p class="desc-text">Akatsuki adalah organisasi fiksi dari seri Naruto yang dibentuk oleh sekelompok ninja kuat dengan tujuan awal untuk menciptakan perdamaian dunia, namun dengan cara yang kontroversial. Dipimpin oleh Nagato (Pain), Akatsuki menjadi salah satu kekuatan paling ditakuti di dunia shinobi.</p>
+                <p class="desc-text">Setiap anggota memiliki kemampuan unik, mulai dari manipulasi kertas oleh Konan hingga kekuatan Rinnegan milik Nagato. Website ini dibuat untuk memperkenalkan anggota Akatsuki kepada penggemar Naruto di seluruh dunia.</p>
+                <p class="desc-text">Bergabunglah dengan kami untuk mengetahui lebih banyak tentang misi dan visi Akatsuki!</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Tombol Next dan Prev -->
+    <button id="next-btn" class="nav-btn next-btn">Next</button>
+    <button id="prev-btn" class="nav-btn prev-btn">Prev</button>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <span class="close" onclick="closeLightbox()">×</span>
+            <div class="image-container">
+                <img id="lightbox-img" src="" alt="Member Image">
+            </div>
+            <h3 id="lightbox-name"></h3>
+            <p id="lightbox-desc"></p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Akatsuki</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

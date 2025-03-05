@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akatsuki - Join</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="fade-in">
+    <!-- Header -->
+    <header>
+        <nav>
+            <h1>Akatsuki</h1>
+            <ul>
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Konten Halaman Join -->
+    <section class="join-page">
+        <h2>Bergabung dengan Akatsuki</h2>
+        <p>Selamat datang! Isi formulir di bawah ini untuk bergabung dengan kami.</p>
+        <!-- Formulir atau konten lain dapat ditambahkan di sini -->
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Akatsuki</p>
+    </footer>
+
+    <script>
+        // Animasi Transisi untuk Navigasi
+        document.querySelectorAll(".nav-link").forEach(link => {
+            link.addEventListener("click", (e) => {
+                e.preventDefault();
+                document.body.classList.add("fade-out");
+                setTimeout(() => {
+                    window.location.href = link.href;
+                }, 500);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akatsuki - Kontak</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #111;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        /* Animasi Fade untuk Navigasi */
+        body.fade-in {
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        body.fade-out {
+            animation: fadeOut 0.5s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+                transform: scale(1);
+            }
+            to {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+        }
+
+        header {
+            background-color: #222;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav h1 {
+            font-size: 1.5rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 1rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #ff5555;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: #222;
+            border-radius: 8px;
+        }
+
+        .contact-form h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: none;
+            border-radius: 4px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        .contact-form textarea {
+            height: 150px;
+            resize: none;
+        }
+
+        .contact-form button {
+            display: block;
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #ff5555;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #ff7777;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #222;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+
+            nav ul {
+                margin-top: 1rem;
+            }
+
+            .contact-form {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body class="fade-in">
+    <!-- Header -->
+    <header>
+        <nav>
+            <h1>Akatsuki</h1>
+            <ul>
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Form Kontak -->
+    <section class="contact-form">
+        <h2>Hubungi Kami</h2>
+        <form id="contactForm">
+            <label for="name">Nama:</label>
+            <input type="text" id="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            <label for="message">Pesan:</label>
+            <textarea id="message" required></textarea>
+            <button type="submit">Kirim</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Akatsuki</p>
+    </footer>
+
+    <script>
+        // Animasi Transisi untuk Navigasi
+        document.querySelectorAll(".nav-link").forEach(link => {
+            link.addEventListener("click", (e) => {
+                e.preventDefault();
+                document.body.classList.add("fade-out");
+                setTimeout(() => {
+                    window.location.href = link.href;
+                }, 500);
+            });
+        });
+
+        document.getElementById("contactForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            alert("Terima kasih atas pesan Anda!");
+            this.reset();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,510 @@
+/* Reset default */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: #fff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Animasi Fade untuk Navigasi */
+body.fade-in {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+body.fade-out {
+    animation: none; /* Menghapus animasi fade-out */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Header */
+header {
+    background-color: #222;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav h1 {
+    font-size: 1.5rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #ff5555;
+}
+
+/* Main Content (Slideable) */
+.main-content {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 150px); /* Sesuaikan tinggi dengan header dan footer */
+    overflow: hidden;
+}
+
+.content-page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: translateX(100%) scale(0.95);
+    transition: transform 0.5s ease, opacity 0.5s ease, scale 0.5s ease;
+}
+
+.content-page.active {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+}
+
+.content-page.exit-left {
+    animation: slideOutLeft 0.5s ease forwards;
+}
+
+.content-page.enter-right {
+    animation: slideInRight 0.5s ease forwards;
+}
+
+.content-page.exit-right {
+    animation: slideOutRight 0.5s ease forwards;
+}
+
+.content-page.enter-left {
+    animation: slideInLeft 0.5s ease forwards;
+}
+
+@keyframes slideOutLeft {
+    from {
+        transform: translateX(0) scale(1);
+    }
+    to {
+        transform: translateX(-100%) scale(0.95);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100%) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+@keyframes slideOutRight {
+    from {
+        transform: translateX(0) scale(1);
+    }
+    to {
+        transform: translateX(100%) scale(0.95);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100%) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+/* Deskripsi Tim */
+.team-description {
+    text-align: center;
+    padding: 2rem;
+}
+
+.team-description h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Kotak Profil */
+.team-profiles {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden; /* Nonaktifkan scroll */
+}
+
+.profile-slider {
+    display: flex;
+    flex-wrap: nowrap;
+    width: calc(180px * 20); /* Lebar total: 10 card + 10 duplikat */
+    animation: autoScroll 40s linear infinite; /* Animasi scroll otomatis */
+}
+
+@keyframes autoScroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-180px * 10)); /* Geser sejauh 10 card */
+    }
+}
+
+.profile-card {
+    background-color: #222;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 0 0 auto;
+    width: 180px; /* Sesuaikan lebar */
+    margin-right: 1rem;
+}
+
+.profile-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 85, 85, 0.5);
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 9 / 16; /* Rasio 9:16 untuk portrait */
+    overflow: hidden;
+}
+
+.profile-card .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: zoomRotate 6s ease-in-out infinite; /* Animasi baru: zoomRotate */
+    animation-delay: calc(var(--index) * 0.3s); /* Delay lebih pendek untuk efek yang lebih dinamis */
+}
+
+.profile-card:nth-child(1) { --index: 0; }
+.profile-card:nth-child(2) { --index: 1; }
+.profile-card:nth-child(3) { --index: 2; }
+.profile-card:nth-child(4) { --index: 3; }
+.profile-card:nth-child(5) { --index: 4; }
+.profile-card:nth-child(6) { --index: 5; }
+.profile-card:nth-child(7) { --index: 6; }
+.profile-card:nth-child(8) { --index: 7; }
+.profile-card:nth-child(9) { --index: 8; }
+.profile-card:nth-child(10) { --index: 9; }
+.profile-card:nth-child(11) { --index: 0; }
+.profile-card:nth-child(12) { --index: 1; }
+.profile-card:nth-child(13) { --index: 2; }
+.profile-card:nth-child(14) { --index: 3; }
+.profile-card:nth-child(15) { --index: 4; }
+.profile-card:nth-child(16) { --index: 5; }
+.profile-card:nth-child(17) { --index: 6; }
+.profile-card:nth-child(18) { --index: 7; }
+.profile-card:nth-child(19) { --index: 8; }
+.profile-card:nth-child(20) { --index: 9; }
+
+@keyframes zoomRotate {
+    0% {
+        transform: scale(1) rotate(0deg);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.1) rotate(5deg); /* Zoom-in dan rotasi subtil */
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 0.8;
+    }
+}
+
+.profile-card h3 {
+    font-size: 1.2rem;
+    padding: 0.5rem;
+}
+
+.profile-card p {
+    padding: 0 0.5rem 0.5rem;
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+/* Tombol Join Sekarang */
+.join-section {
+    text-align: center;
+    padding: 1rem;
+}
+
+.join-btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background-color: #ff5555; /* Warna merah Akatsuki */
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.join-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 85, 85, 0.7);
+    background-color: #ff7777;
+}
+
+.join-btn:active {
+    transform: scale(0.95);
+}
+
+/* Tombol Next dan Prev */
+.nav-btn {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #ff5555;
+    color: #fff;
+    border: none;
+    padding: 1rem 1.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    z-index: 10;
+}
+
+.nav-btn:hover {
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 85, 85, 0.7);
+    background-color: #ff7777;
+    animation: pulse 1s infinite;
+}
+
+.next-btn {
+    right: 20px;
+}
+
+.prev-btn {
+    left: 20px;
+    display: none; /* Awalnya disembunyikan */
+}
+
+@keyframes pulse {
+    0% { transform: translateY(-50%) scale(1); }
+    50% { transform: translateY(-50%) scale(1.1); }
+    100% { transform: translateY(-50%) scale(1); }
+}
+
+/* Halaman Video */
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 2rem;
+}
+
+.video-container video {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 85, 85, 0.3);
+}
+
+/* Halaman Deskripsi */
+.desc-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+.desc-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.desc-text {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.desc-container h2.visible,
+.desc-text.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.desc-text:hover {
+    color: #ff5555;
+    transform: translateY(-5px);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-content {
+    background-color: #222;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+}
+
+.lightbox-content .image-container {
+    width: 100%;
+    max-width: 300px; /* Batasi lebar maksimum untuk lightbox */
+    margin: 0 auto;
+    aspect-ratio: 9 / 16; /* Rasio 9:16 untuk lightbox */
+    overflow: hidden;
+}
+
+.lightbox-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.lightbox-content h3 {
+    margin: 1rem 0;
+}
+
+.lightbox-content p {
+    color: #ccc;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #fff;
+}
+
+.close:hover {
+    color: #ff5555;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #222;
+}
+
+/* Responsif untuk Mobile */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+
+    nav ul {
+        margin-top: 1rem;
+    }
+
+    .profile-card {
+        width: 150px; /* Kurangi lebar di mobile */
+    }
+
+    .profile-slider {
+        width: calc(150px * 20); /* Sesuaikan lebar total di mobile */
+        animation: autoScroll 30s linear infinite; /* Percepat animasi di mobile */
+    }
+
+    @keyframes autoScroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(-150px * 10)); /* Sesuaikan geser di mobile */
+        }
+    }
+
+    .lightbox-content .image-container {
+        max-width: 250px; /* Sesuaikan ukuran di mobile */
+    }
+
+    .join-btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .video-container video {
+        max-width: 100%;    
+    }
+
+    .desc-container h2 {
+        font-size: 1.8rem;
+    }
+
+    .desc-text {
+        font-size: 1rem;
+    }
+
+    .nav-btn {
+        padding: 0.75rem;
+        font-size: 1rem;
+    }
+}
