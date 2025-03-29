@@ -7,7 +7,7 @@ const members = [
     { id: 5, name: "Deidara", desc: "Ahli ledakan yang percaya seni adalah ledakan.", img: "images/deidara.jpeg" },
     { id: 6, name: "Sasori", desc: "Master boneka dengan teknik racun mematikan.", img: "images/sasori.jpeg" },
     { id: 7, name: "Hidan", desc: "Anggota abadi dengan ritual darah yang unik.", img: "images/hidan.jpeg" },
-    { id: 8, name: "Kakuzu", desc: "Pengumpul harta yang menguasai lima elemen.", img: "images/kakuzu.jpeg" },
+    { id: 8, name: "gumpalan pink", desc: "anomali", img: "images/sakura.jpg" },
     { id: 9, name: "sasuke", desc: "balas dendam kepada desa konoha", img: "images/sasuke.jpeg" }, // Perbaikan gambar
     { id: 10, name: "Tobi (Obito Uchiha)", desc: "Manipulator tersembunyi dengan Sharingan dan Rinnegan.", img: "images/ovito.jpeg" }
 ];
